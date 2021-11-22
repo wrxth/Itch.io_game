@@ -93,6 +93,11 @@ public class EnemyControl : MonoBehaviour
                 chasingPlayer();
 
             }
+            else
+            {
+                m_PlayerDetected = false;
+                m_CloseToPlayer = false;
+            }
         }
     }
     public void Check1()

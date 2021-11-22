@@ -63,6 +63,7 @@ public class EnemyFieldOfView : MonoBehaviour
                 {
                     es.hunting = true;
                     es.VisionTime = es.VisionTimeMax;
+                    StartCoroutine(es.EnemieCounter());
                 }
             }
         }
