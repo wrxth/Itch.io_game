@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
-    private LayerMask InterActable;
+    [SerializeField] private LayerMask InterActable;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Collider[] objects = Physics.OverlapSphere(transform.position, 10, InterActable);
+            Collider[] objects = Physics.OverlapSphere(transform.position, 1.25f, InterActable);
 
             for (int i = 0; i < objects.Length; i++)
             {
@@ -22,5 +23,4 @@ public class Interaction : MonoBehaviour
             }
         }
     }
-
 }
