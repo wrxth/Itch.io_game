@@ -6,6 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyControl : MonoBehaviour
 {
+    [SerializeField] private GameObject[] CheckPoints;
     [SerializeField] private GameObject checkPoint1;
     [SerializeField] private GameObject checkPoint2;
     [SerializeField] private GameObject player;
@@ -102,6 +103,7 @@ public class EnemyControl : MonoBehaviour
     }
     public void Check1()
     {
+        checkPoint1 = CheckPoints[Random.Range(0, CheckPoints.Length)];
         if (checkPoint2 != null)
         {
             Vector3 targetVector = checkPoint2.transform.position;
@@ -116,6 +118,7 @@ public class EnemyControl : MonoBehaviour
 
     public void Check2()
     {
+        checkPoint2 = CheckPoints[Random.Range(0, CheckPoints.Length)];
         if (checkPoint1 != null)
         {
             Vector3 targetVector = checkPoint1.transform.position;
