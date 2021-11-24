@@ -14,7 +14,7 @@ public class Hide : MonoBehaviour, Iinteract
     {
         exitPosition = gameObject.transform.GetChild(1).gameObject;
         Player = GameObject.FindGameObjectWithTag("Player");
-        mov = player.GetComponent<Movement>();
+        mov = Player.GetComponent<Movement>();
         
     }
 
@@ -22,7 +22,8 @@ public class Hide : MonoBehaviour, Iinteract
     {
         if (!insideCloset) // If the player is not inside the closet it will transport them inside the closet and set the bool to true
         {
-            
+            Player.GetComponent<CapsuleCollider>().enabled = false;
+            Player.GetComponent<Rigidbody>().useGravity = false;
             GameObject.FindGameObjectWithTag("Player").transform.position = gameObject.transform.position;
             insideCloset = true;
             mov.canWalk = false;
@@ -31,9 +32,14 @@ public class Hide : MonoBehaviour, Iinteract
 
         else if (insideCloset) // If the player in inside the closet it will transport them outside the closet and set the bool to false
         {
+
+
             GameObject.FindGameObjectWithTag("Player").transform.position = exitPosition.transform.position;
+            Player.GetComponent<CapsuleCollider>().enabled = true;
+            Player.GetComponent<Rigidbody>().useGravity = true;
             insideCloset = false;
             mov.canWalk = true;
+
         }
     }
 }
