@@ -5,6 +5,18 @@ using UnityEngine;
 public class Hide : MonoBehaviour, Iinteract
 {
     public bool insideCloset;
+    public List<GameObject> exitPositions;
+    private Movement mov;
+    private GameObject exitPosition;
+    private GameObject player;
+
+    private void Start()
+    {
+        exitPositions = new List<GameObject>();
+        exitPosition = gameObject.transform.GetChild(1).gameObject;
+        player = GameObject.FindGameObjectWithTag("Player");
+        mov = player.GetComponent<Movement>();
+    }
 
     public void Interact()
     {
@@ -12,12 +24,14 @@ public class Hide : MonoBehaviour, Iinteract
         {
             GameObject.FindGameObjectWithTag("Player").transform.position = gameObject.transform.position;
             insideCloset = true;
+            mov.canWalk = false;
         }
 
         else if (insideCloset) // If the player in inside the closet it will transport them outside the closet and set the bool to false
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.FindGameObjectWithTag("Exit Position").transform.position;
+            GameObject.FindGameObjectWithTag("Player").transform.position = exitPosition.transform.position;
             insideCloset = false;
+            mov.canWalk = true;
         }
     }
 }
