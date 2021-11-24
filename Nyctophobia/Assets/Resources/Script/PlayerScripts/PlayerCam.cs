@@ -8,6 +8,7 @@ public class PlayerCam : MonoBehaviour
     private Vector3 cameraOffset;
 
     [SerializeField]private int CameraZoomMin, CameraCurrentZoomIndex, CameraZoomMax;
+
     private void Start()
     {
         cameraOffset = transform.position;
