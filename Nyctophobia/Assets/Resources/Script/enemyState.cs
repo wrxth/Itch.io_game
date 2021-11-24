@@ -12,17 +12,24 @@ public class enemyState : MonoBehaviour
     public float VisionTimeMax;
 
     [SerializeField] private EnemyControl EC;
+    [SerializeField] private bool IsRunning;
     public IEnumerator EnemieCounter()
     {
-        while (VisionTime > 0)
+        if (IsRunning == false)
         {
-            VisionTime--;
-            yield return new WaitForSeconds(1);
+            IsRunning = true;
+            while (VisionTime > 0)
+            {
+                VisionTime--;
+                yield return new WaitForSeconds(1);
+            }
+            if (VisionTime <= 0)
+            {
+                hunting = false;
+                EC.Check1();
+            }
+            IsRunning = false;
         }
-        if(VisionTime <= 0)
-        {
-            hunting = false;
-            EC.Check1();
-        }
+       
     }
 }
