@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5018351513180710412}
   - component: {fileID: 5018351513180710411}
   - component: {fileID: 5018351513180710416}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 42
   m_CollisionDetection: 0
 --- !u!114 &5018351513180710416
 MonoBehaviour:
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167c726b58a42534a99c33904a41d811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoveSpeed: 5
+  currentMoveSpeed: 2.5
   staminaCount: 20
   staminaDrain: 7.5
   canWalk: 1
