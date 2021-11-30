@@ -375,13 +375,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232600937}
-  m_LocalRotation: {x: -0.5585171, y: 0.19738753, z: -0.36897087, w: -0.7162104}
+  m_LocalRotation: {x: -0.49152103, y: -0.15616535, z: -0.70468616, w: -0.48727503}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 71.031, y: 23.46, z: 431.371}
+  m_LocalEulerAnglesHint: {x: 15.006, y: 61.016, z: 479.549}
 --- !u!1001 &1368064484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,6 +494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kats_animatie (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3559210949389471449, guid: 7613b63a5a73afd44a05503327a26fb6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 80f99d9be99964c49972b37eda3bf6d2, type: 2}
     - target: {fileID: 7676069659668194106, guid: 7613b63a5a73afd44a05503327a26fb6, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
