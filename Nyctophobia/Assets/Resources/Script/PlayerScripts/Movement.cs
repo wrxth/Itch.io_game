@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour
             {
                 rechargeStage = true;
             }
-            staminaCount += staminaDrain * Time.deltaTime;
+            staminaCount += staminaDrain/3 * Time.deltaTime;
             StaminaUI();
             currentMoveSpeed = minMoveSpeed;
         }
@@ -67,7 +67,6 @@ public class Movement : MonoBehaviour
             float v = Input.GetAxisRaw("Vertical") * Time.deltaTime;
 
             Vector3 movement = new Vector3(h, 0.0f, v);
-
             transform.Translate(movement * currentMoveSpeed, Space.World);
 
             if (movement != Vector3.zero)
@@ -76,6 +75,7 @@ public class Movement : MonoBehaviour
             }
         }
     }
+
 
     public void StaminaUI()
     {
