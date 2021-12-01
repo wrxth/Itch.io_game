@@ -8,5 +8,7 @@ public class Key : MonoBehaviour, Iinteract
     public void Interact()
     {
         keyManager.Instance.Keys[WhichKey] = true;
+
+        Destroy(gameObject);
     }
 }
