@@ -10,11 +10,15 @@ public class keyManager : MonoBehaviour
 
     public bool DoorOpen;
 
+    private GameObject poop;
+
     private void Awake()
     {
         Instance = this;
         Keys = new bool[2];
     }
+
+
 
     // Update is called once per frame
     void Update()
