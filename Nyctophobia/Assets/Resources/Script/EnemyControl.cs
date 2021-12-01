@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyControl : MonoBehaviour
@@ -98,6 +99,12 @@ public class EnemyControl : MonoBehaviour
             {
                 m_PlayerDetected = false;
                 m_CloseToPlayer = false;
+            }
+
+
+            if (m_CloseToPlayer == true)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
             }
         }
     }
