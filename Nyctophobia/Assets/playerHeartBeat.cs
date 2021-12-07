@@ -12,26 +12,19 @@ public class playerHeartBeat : MonoBehaviour
 
     void Update()
     {
-        HeartOrigin.clip = CurrentHeartSounds;
-        if (Vector3.Distance(transform.position, Enemy.transform.position) < 15)
+        if (Vector3.Distance(transform.position, Enemy.transform.position) < 5)
         {
             CurrentHeartSounds = HeartSounds[0];
-            
-            if (HeartOrigin.isPlaying != true)
-            {
-                HeartOrigin.Play();
-            }
-
         }
-        else if (Vector3.Distance(transform.position, Enemy.transform.position) < 20)
+        else if (Vector3.Distance(transform.position, Enemy.transform.position) < 10)
         {
             CurrentHeartSounds = HeartSounds[1];
 
-            if (HeartOrigin.isPlaying != true)
-            {
-                HeartOrigin.Play();
-            }
-            
+        }
+        else if (Vector3.Distance(transform.position, Enemy.transform.position) < 15)
+        {
+            CurrentHeartSounds = HeartSounds[2];
+            HeartOrigin.Play();
         }
         else
         {
