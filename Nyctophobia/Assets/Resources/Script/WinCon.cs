@@ -7,14 +7,14 @@ public class WinCon : MonoBehaviour
 {
     public int winScene;
 
-    private keyManager man;
+    private KeyManager man;
 
     private GameObject door;
 
     void Start()
     {
         door = GameObject.FindGameObjectWithTag("Door");
-        man = door.GetComponent<keyManager>();
+        man = door.GetComponent<KeyManager>();
     }
 
     void Update()

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class keyManager : MonoBehaviour, Iinteract
+public class KeyManager : MonoBehaviour, Iinteract
 {
-    public static keyManager Instance;
+    public static KeyManager Instance;
     public TMP_Text Objective;
     public TMP_Text KeyProgression;
 
@@ -45,4 +45,3 @@ public class keyManager : MonoBehaviour, Iinteract
         }
     }
 }
-

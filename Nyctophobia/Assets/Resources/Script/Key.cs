@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Key : MonoBehaviour, Iinteract
 {
-    [SerializeField] private int WhichKey;
+    [SerializeField] private int whichKey;
+    
     public void Interact()
     {
-        keyManager.Instance.Keys[WhichKey] = true;
+        KeyManager.Instance.Keys[whichKey] = true;
 
+        KeyManager.Instance.KeyCounter++;
         Destroy(gameObject);
     }
 }
