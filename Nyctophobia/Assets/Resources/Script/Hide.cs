@@ -7,12 +7,14 @@ public class Hide : MonoBehaviour, Iinteract
     public bool insideCloset;
    
     private Movement mov;
+    private GameObject hidePosition;
     private GameObject exitPosition;
     private GameObject Player;
 
     private void Start()
     {
-        exitPosition = gameObject.transform.GetChild(1).gameObject;
+        hidePosition = gameObject.transform.GetChild(3).gameObject;
+        exitPosition = gameObject.transform.GetChild(4).gameObject;
         Player = GameObject.FindGameObjectWithTag("Player");
         mov = Player.GetComponent<Movement>();
     }
@@ -23,7 +25,7 @@ public class Hide : MonoBehaviour, Iinteract
         {
             Player.GetComponent<CapsuleCollider>().enabled = false;
             Player.GetComponent<Rigidbody>().useGravity = false;
-            GameObject.FindGameObjectWithTag("Player").transform.position = gameObject.transform.position;
+            GameObject.FindGameObjectWithTag("Player").transform.position = hidePosition.transform.position;
             insideCloset = true;
             mov.canWalk = false;
         }
