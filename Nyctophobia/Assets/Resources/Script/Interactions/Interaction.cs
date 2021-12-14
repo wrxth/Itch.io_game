@@ -10,7 +10,7 @@ public class Interaction : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Collider[] objects = Physics.OverlapSphere(transform.position, 1f, InterActable);
+            Collider[] objects = Physics.OverlapSphere(transform.position, 0.75f, InterActable);
 
             for (int i = 0; i < objects.Length; i++)
             {

@@ -382,6 +382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1618685043938802834}
   - component: {fileID: 1295910818350720188}
+  - component: {fileID: 8339187826048571615}
   m_Layer: 0
   m_Name: character
   m_TagString: Untagged
@@ -396,7 +397,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106956560965428776}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.795122, y: -2.74, z: -1.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -425,6 +426,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &8339187826048571615
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106956560965428776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.43580502, y: 0.93648934, z: 0.42778492}
+  m_Center: {x: -0.026814789, y: -0.03175533, z: 0.057049394}
 --- !u!1 &4105575902791323022
 GameObject:
   m_ObjectHideFlags: 0
