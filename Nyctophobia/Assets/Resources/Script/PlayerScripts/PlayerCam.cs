@@ -22,6 +22,7 @@ public class PlayerCam : MonoBehaviour
         {
             Camera.main.fieldOfView--;
             CameraCurrentZoomIndex--;
+            
         }
         else if (CameraCurrentZoomIndex < CameraZoomMax && Input.GetAxis("Mouse ScrollWheel") < 0f) // backward
         {
