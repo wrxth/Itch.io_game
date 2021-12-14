@@ -24,6 +24,7 @@ public class EnemyControl : MonoBehaviour
 
     [SerializeField] private float m_RunSpeed = 16f;
     [SerializeField] private float m_WalkSpeed = 4f;
+    [SerializeField] private float CurrentSpeed = 4f;
     [SerializeField] private float m_NavMeshStopDis = 5f;
 
     public Animator m_Animator;
@@ -48,8 +49,12 @@ public class EnemyControl : MonoBehaviour
         {
             if (m_PlayerDetected == true)
             {
+                if (CurrentSpeed < m_RunSpeed)
+                {
+                    CurrentSpeed += Time.deltaTime;
+                }
                 chasingPlayer();
-                NavMesh.speed = m_RunSpeed;
+                NavMesh.speed = CurrentSpeed;
                 //Debug.Log(NavMesh.isStopped);
                 //RunningSound.Play();
                 //WalkingSound.Stop();
@@ -59,6 +64,7 @@ public class EnemyControl : MonoBehaviour
                 //RunningSound.Stop();
                 //WalkingSound.Play();
                 NavMesh.speed = m_WalkSpeed;
+                CurrentSpeed = m_WalkSpeed;
             }
 
             if (PatrolEnemy == true)
@@ -110,7 +116,7 @@ public class EnemyControl : MonoBehaviour
     }
     public void Check1()
     {
-        checkPoint1 = CheckPoints[Random.Range(0, CheckPoints.Length)];
+        checkPoint1 = FindPointClosetToPlayer();
         if (checkPoint2 != null)
         {
             Vector3 targetVector = checkPoint2.transform.position;
@@ -125,7 +131,7 @@ public class EnemyControl : MonoBehaviour
 
     public void Check2()
     {
-        checkPoint2 = CheckPoints[Random.Range(0, CheckPoints.Length)];
+        checkPoint2 = FindPointClosetToPlayer();
         if (checkPoint1 != null)
         {
             Vector3 targetVector = checkPoint1.transform.position;
@@ -167,5 +173,21 @@ public class EnemyControl : MonoBehaviour
         {
             Debug.Log("je bent vergeten de transform erin te zetten");
         }
+    }
+
+    private GameObject FindPointClosetToPlayer()
+    {
+        float distanceToPlayer = 1000f;
+        int currentclosest = 0;
+        for (int i = 0; i < CheckPoints.Length; i++)
+        {
+            if (Vector3.Distance(player.transform.position, CheckPoints[i].transform.position) < distanceToPlayer)
+            {
+                currentclosest = i;
+                distanceToPlayer = Vector3.Distance(player.transform.position, CheckPoints[i].transform.position);
+            }
+        }
+
+        return CheckPoints[currentclosest];
     }
 }
