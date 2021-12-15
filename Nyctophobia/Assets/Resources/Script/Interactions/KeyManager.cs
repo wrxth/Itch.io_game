@@ -22,7 +22,7 @@ public class KeyManager : MonoBehaviour, Iinteract
         Objective.text = "Find a way out of here";
     }
 
-    void Update()
+    private void Update()
     {
         if (Keys[0] && Keys[1] && Keys[2])
         {
