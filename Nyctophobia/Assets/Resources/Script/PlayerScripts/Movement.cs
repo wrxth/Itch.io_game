@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float staminaCount;
     private float maxStamina;
     private bool rechargeStage = false;
-
+    private bool canRun = true;
     [SerializeField] private float staminaDrain;
 
     public bool canWalk;
@@ -36,7 +36,8 @@ public class Movement : MonoBehaviour
 
         staminaCount = Mathf.Clamp(staminaCount, 0, maxStamina);
 
-        if (staminaCount > 0 && Input.GetKey(KeyCode.LeftShift) && !rechargeStage)
+        //run function
+        if (staminaCount > 0 && Input.GetKey(KeyCode.LeftShift) && !rechargeStage && canRun)
         {
             staminaCount -= staminaDrain * Time.deltaTime;
             StaminaUI();
@@ -57,7 +58,26 @@ public class Movement : MonoBehaviour
         {
             rechargeStage = false;
         }
+
+
+        
     }
+
+    private void OnCollisionStay(Collision col)
+    {
+        if (col.gameObject.tag == "Wall")
+        {
+            canRun = false;
+            currentMoveSpeed = 0.5f;
+        }
+        else if(col.gameObject.tag != "Wall")
+        {
+            canRun = true;
+            currentMoveSpeed = minMoveSpeed;
+        }
+    }
+
+    
 
     void FixedUpdate()
     {
