@@ -31,8 +31,6 @@ public class EnemyControl : MonoBehaviour
     public bool m_PlayerDetected;
     public bool m_CloseToPlayer;
 
-    //[SerializeField] private AudioSource RunningSound;
-    //[SerializeField] private AudioSource WalkingSound;
     private void Start()
     {
         NavMeshPath = new NavMeshPath();
@@ -55,14 +53,9 @@ public class EnemyControl : MonoBehaviour
                 }
                 chasingPlayer();
                 NavMesh.speed = CurrentSpeed;
-                //Debug.Log(NavMesh.isStopped);
-                //RunningSound.Play();
-                //WalkingSound.Stop();
             }
             else
             {
-                //RunningSound.Stop();
-                //WalkingSound.Play();
                 NavMesh.speed = m_WalkSpeed;
                 CurrentSpeed = m_WalkSpeed;
             }
@@ -71,12 +64,10 @@ public class EnemyControl : MonoBehaviour
             {
                 if (Vector3.Distance(gameObject.transform.position, checkPoint1.transform.position) < 3)
                 {
-                    //hitCheckPoint1 = true;
                     Check1();
                 }
                 if (Vector3.Distance(gameObject.transform.position, checkPoint2.transform.position) < 3)
                 {
-                    //hitCheckPoint2 = true;
                     Check2();
                 }
 
@@ -85,9 +76,6 @@ public class EnemyControl : MonoBehaviour
                     m_CloseToPlayer = true;
                     Vector3 lookAt = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
                     transform.LookAt(lookAt);
-                    //WalkingSound.Stop();
-                    //RunningSound.Stop();
-
                 }
                 else
                 {
@@ -116,7 +104,7 @@ public class EnemyControl : MonoBehaviour
     }
     public void Check1()
     {
-        checkPoint1 = FindPointClosetToPlayer();
+        checkPoint1 = CheckPoints[Random.Range(0, CheckPoints.Length)];
         if (checkPoint2 != null)
         {
             Vector3 targetVector = checkPoint2.transform.position;
@@ -131,7 +119,7 @@ public class EnemyControl : MonoBehaviour
 
     public void Check2()
     {
-        checkPoint2 = FindPointClosetToPlayer();
+        checkPoint2 = CheckPoints[Random.Range(0, CheckPoints.Length)];
         if (checkPoint1 != null)
         {
             Vector3 targetVector = checkPoint1.transform.position;
