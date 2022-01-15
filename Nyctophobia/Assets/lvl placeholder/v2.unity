@@ -7988,7 +7988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57eabab54f31f3b48b11b365b65c4e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winScene: 1
+  winScene: 2
 --- !u!114 &230038253
 MonoBehaviour:
   m_ObjectHideFlags: 0
