@@ -30,7 +30,7 @@ public class KeyManager : MonoBehaviour, Iinteract
             DoorOpen = true;
         }
 
-        KeyProgression.text = "Keys : " + KeyCounter + " out of 3";
+        KeyProgression.text = "Keys " + KeyCounter + " out of 3";
     }
 
     public void Interact()
@@ -41,7 +41,12 @@ public class KeyManager : MonoBehaviour, Iinteract
         }
         else if (DoorOpen)
         {
-            GoNext = true;
+            gameObject.GetComponent<Animator>().SetBool("Keys Collected", true);
         }
+    }
+
+    private void AfterAnim()
+    {
+        GoNext = true;
     }
 }
