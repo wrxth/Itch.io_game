@@ -37,7 +37,7 @@ public class EnemyControl : MonoBehaviour
     {
         NavMeshPath = new NavMeshPath();
         Check1();
-        player = GameObject.Find("player");
+        player = GameObject.Find("Player");
     }
     private void Update()
     {

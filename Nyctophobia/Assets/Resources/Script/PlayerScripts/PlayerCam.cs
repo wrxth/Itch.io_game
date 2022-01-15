@@ -15,7 +15,7 @@ public class PlayerCam : MonoBehaviour
     }
     void Update()
     {
-        playerPos = GameObject.Find("player").transform;
+        playerPos = GameObject.Find("Player").transform;
         transform.position = playerPos.transform.position + cameraOffset;
 
         if(CameraCurrentZoomIndex > CameraZoomMin && Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
