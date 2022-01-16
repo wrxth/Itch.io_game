@@ -96,7 +96,7 @@ public class EnemyControl : MonoBehaviour
             }
 
 
-            if (m_CloseToPlayer == true)
+            if (m_CloseToPlayer == true && KastManager.Instance.InKast == false)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
             }
@@ -110,6 +110,7 @@ public class EnemyControl : MonoBehaviour
             Vector3 targetVector = checkPoint2.transform.position;
             NavMesh.SetDestination(targetVector);
 
+            Debug.Log("Check1");
         }
         else
         {
@@ -124,6 +125,8 @@ public class EnemyControl : MonoBehaviour
         {
             Vector3 targetVector = checkPoint1.transform.position;
             NavMesh.SetDestination(targetVector);
+
+            Debug.Log("Check2");
         }
         else
         {
@@ -149,11 +152,6 @@ public class EnemyControl : MonoBehaviour
                 {
                     NavMesh.isStopped = false;
                 }
-            }
-            else
-            {
-                NavMesh.SetDestination(BackUpTarget.position);
-                CurrentDes = BackUpTarget.position;
             }
             m_PlayerDetected = true;
         }

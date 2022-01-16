@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 1199552969521708889}
   - component: {fileID: 5114647756709401613}
   - component: {fileID: 2367875512410771558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: kast1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ Transform:
   m_GameObject: {fileID: 7597442392935913203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.33, y: 0.06, z: -3.36}
-  m_LocalScale: {x: 1.7, y: 1.2, z: 1.3}
+  m_LocalScale: {x: 0.5666667, y: 0.40000004, z: 0.4333333}
   m_Children:
   - {fileID: 3941916113183980586}
   - {fileID: 1642663653566785364}

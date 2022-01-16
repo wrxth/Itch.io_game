@@ -26,6 +26,7 @@ public class enemyState : MonoBehaviour
             if (VisionTime <= 0)
             {
                 hunting = false;
+                Debug.Log("Ping");
                 EC.Check1();
             }
             IsRunning = false;

@@ -2450,6 +2450,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710459191}
     m_Modifications:
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7597442392935913203, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
       propertyPath: m_Name
       value: Working Closet (6)
@@ -6651,6 +6675,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710459191}
     m_Modifications:
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7597442392935913203, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
       propertyPath: m_Name
       value: Working Closet (4)
@@ -8209,6 +8257,7 @@ GameObject:
   - component: {fileID: 230038250}
   - component: {fileID: 230038252}
   - component: {fileID: 230038253}
+  - component: {fileID: 230038254}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -8273,6 +8322,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumberOfObstacles: 6
+--- !u!114 &230038254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230038249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cde0f527fe7b214a8c3ccb2d7484959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InKast: 0
 --- !u!1001 &232797638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14939,6 +15001,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710459191}
     m_Modifications:
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7597442392935913203, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
       propertyPath: m_Name
       value: Working Closet (7)
@@ -19490,6 +19576,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710459191}
     m_Modifications:
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7597442392935913203, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
       propertyPath: m_Name
       value: Working Closet (5)
@@ -19497,18 +19607,6 @@ PrefabInstance:
     - target: {fileID: 7667893196822527955, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7667893196822527955, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 7667893196822527955, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.40000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 7667893196822527955, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.4333333
       objectReference: {fileID: 0}
     - target: {fileID: 7667893196822527955, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21938,6 +22036,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710459191}
     m_Modifications:
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7597442392935913203, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
       propertyPath: m_Name
       value: Working Closet (2)
@@ -23317,6 +23439,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710459191}
     m_Modifications:
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7597442392935913203, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
       propertyPath: m_Name
       value: Working Closet (1)
@@ -39510,6 +39656,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710459191}
     m_Modifications:
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7597442392935913203, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
       propertyPath: m_Name
       value: Working Closet (3)
@@ -41411,6 +41581,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710459191}
     m_Modifications:
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7597442392935913203, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
       propertyPath: m_Name
       value: Working Closet
@@ -50029,6 +50223,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5412908658843352308, guid: 13876878e61e4744bbc4f3e9f7cae1ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412908658843352308, guid: 13876878e61e4744bbc4f3e9f7cae1ca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7880684529110157416, guid: 13876878e61e4744bbc4f3e9f7cae1ca, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -50167,7 +50369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8224424276516452395, guid: 13876878e61e4744bbc4f3e9f7cae1ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.2268305
+      value: 22.6
       objectReference: {fileID: 0}
     - target: {fileID: 8224424276516452395, guid: 13876878e61e4744bbc4f3e9f7cae1ca, type: 3}
       propertyPath: m_LocalPosition.y
@@ -50175,7 +50377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8224424276516452395, guid: 13876878e61e4744bbc4f3e9f7cae1ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 64.31339
+      value: -32.4
       objectReference: {fileID: 0}
     - target: {fileID: 8224424276516452395, guid: 13876878e61e4744bbc4f3e9f7cae1ca, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50208,6 +50410,14 @@ PrefabInstance:
     - target: {fileID: 8224424276516452406, guid: 13876878e61e4744bbc4f3e9f7cae1ca, type: 3}
       propertyPath: m_Name
       value: Enemie
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224424276516452406, guid: 13876878e61e4744bbc4f3e9f7cae1ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224424276516452407, guid: 13876878e61e4744bbc4f3e9f7cae1ca, type: 3}
+      propertyPath: VisionTimeMax
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13876878e61e4744bbc4f3e9f7cae1ca, type: 3}
@@ -60560,6 +60770,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710459191}
     m_Modifications:
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496539486597308606, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994047584144219329, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538535955163562746, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7597442392935913203, guid: ba9f848f7d5fb9543be230d4a7ccaa71, type: 3}
       propertyPath: m_Name
       value: Working Closet (8)
@@ -74809,7 +75043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8217003896311628822, guid: 1bf68bf3fcc89ed47a0ac83fbf1a7ee2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.55
+      value: 21.1
       objectReference: {fileID: 0}
     - target: {fileID: 8217003896311628822, guid: 1bf68bf3fcc89ed47a0ac83fbf1a7ee2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -74817,7 +75051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8217003896311628822, guid: 1bf68bf3fcc89ed47a0ac83fbf1a7ee2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -72.43
+      value: -70.2
       objectReference: {fileID: 0}
     - target: {fileID: 8217003896311628822, guid: 1bf68bf3fcc89ed47a0ac83fbf1a7ee2, type: 3}
       propertyPath: m_LocalRotation.w
