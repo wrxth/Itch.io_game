@@ -71,7 +71,6 @@ public class Hide : MonoBehaviour, Iinteract
             mov.canWalk = true;
             closetCooldownTime = closetCooldownCurrent + 2;
             KastManager.Instance.InKast = false;
-
         }
     }
 }
