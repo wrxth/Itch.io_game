@@ -71,7 +71,7 @@ public class EnemyControl : MonoBehaviour
                     Check2();
                 }
 
-                if (Vector3.Distance(transform.position, CurrentDes) < 1 || NavMesh.isStopped == true)
+                if (Vector3.Distance(transform.position, CurrentDes) < 1)
                 {
                     m_CloseToPlayer = true;
                     Vector3 lookAt = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
@@ -98,7 +98,7 @@ public class EnemyControl : MonoBehaviour
 
             if (m_CloseToPlayer == true && KastManager.Instance.InKast == false)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
             }
         }
     }
