@@ -25,4 +25,8 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void controlsOpen()
+    {
+        SceneManager.LoadScene(3);
+    }
 }

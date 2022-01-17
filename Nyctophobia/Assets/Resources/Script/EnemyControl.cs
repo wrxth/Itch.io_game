@@ -24,19 +24,18 @@ public class EnemyControl : MonoBehaviour
 
     [SerializeField] private float m_RunSpeed = 16f;
     [SerializeField] private float m_WalkSpeed = 4f;
+    [SerializeField] private float CurrentSpeed = 4f;
     [SerializeField] private float m_NavMeshStopDis = 5f;
 
     public Animator m_Animator;
     public bool m_PlayerDetected;
     public bool m_CloseToPlayer;
 
-    //[SerializeField] private AudioSource RunningSound;
-    //[SerializeField] private AudioSource WalkingSound;
     private void Start()
     {
         NavMeshPath = new NavMeshPath();
         Check1();
-        player = GameObject.Find("player");
+        player = GameObject.Find("Player");
     }
     private void Update()
     {
@@ -48,29 +47,27 @@ public class EnemyControl : MonoBehaviour
         {
             if (m_PlayerDetected == true)
             {
+                if (CurrentSpeed < m_RunSpeed)
+                {
+                    CurrentSpeed += Time.deltaTime;
+                }
                 chasingPlayer();
-                NavMesh.speed = m_RunSpeed;
-                //Debug.Log(NavMesh.isStopped);
-                //RunningSound.Play();
-                //WalkingSound.Stop();
+                NavMesh.speed = CurrentSpeed;
             }
             else
             {
-                //RunningSound.Stop();
-                //WalkingSound.Play();
                 NavMesh.speed = m_WalkSpeed;
+                CurrentSpeed = m_WalkSpeed;
             }
 
             if (PatrolEnemy == true)
             {
                 if (Vector3.Distance(gameObject.transform.position, checkPoint1.transform.position) < 3)
                 {
-                    //hitCheckPoint1 = true;
                     Check1();
                 }
                 if (Vector3.Distance(gameObject.transform.position, checkPoint2.transform.position) < 3)
                 {
-                    //hitCheckPoint2 = true;
                     Check2();
                 }
 
@@ -79,9 +76,6 @@ public class EnemyControl : MonoBehaviour
                     m_CloseToPlayer = true;
                     Vector3 lookAt = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
                     transform.LookAt(lookAt);
-                    //WalkingSound.Stop();
-                    //RunningSound.Stop();
-
                 }
                 else
                 {
@@ -102,7 +96,7 @@ public class EnemyControl : MonoBehaviour
             }
 
 
-            if (m_CloseToPlayer == true)
+            if (m_CloseToPlayer == true && KastManager.Instance.InKast == false)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
             }
@@ -116,6 +110,7 @@ public class EnemyControl : MonoBehaviour
             Vector3 targetVector = checkPoint2.transform.position;
             NavMesh.SetDestination(targetVector);
 
+            Debug.Log("Check1");
         }
         else
         {
@@ -130,6 +125,8 @@ public class EnemyControl : MonoBehaviour
         {
             Vector3 targetVector = checkPoint1.transform.position;
             NavMesh.SetDestination(targetVector);
+
+            Debug.Log("Check2");
         }
         else
         {
@@ -156,16 +153,27 @@ public class EnemyControl : MonoBehaviour
                     NavMesh.isStopped = false;
                 }
             }
-            else
-            {
-                NavMesh.SetDestination(BackUpTarget.position);
-                CurrentDes = BackUpTarget.position;
-            }
             m_PlayerDetected = true;
         }
         else
         {
             Debug.Log("je bent vergeten de transform erin te zetten");
         }
+    }
+
+    private GameObject FindPointClosetToPlayer()
+    {
+        float distanceToPlayer = 1000f;
+        int currentclosest = 0;
+        for (int i = 0; i < CheckPoints.Length; i++)
+        {
+            if (Vector3.Distance(player.transform.position, CheckPoints[i].transform.position) < distanceToPlayer)
+            {
+                currentclosest = i;
+                distanceToPlayer = Vector3.Distance(player.transform.position, CheckPoints[i].transform.position);
+            }
+        }
+
+        return CheckPoints[currentclosest];
     }
 }

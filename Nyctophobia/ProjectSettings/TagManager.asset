@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Exit Position
   - Hide Position
+  - Door
+  - Wall
   layers:
   - Default
   - TransparentFX

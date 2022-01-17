@@ -55,6 +55,7 @@ public class Hide : MonoBehaviour, Iinteract
             insideCloset = true;
             mov.canWalk = false;
             closetCooldownTime = closetCooldownCurrent + 2;
+            KastManager.Instance.InKast = true;
         }
 
         else if (insideCloset && !closetCooldownCheck)
@@ -69,6 +70,7 @@ public class Hide : MonoBehaviour, Iinteract
             insideCloset = false;
             mov.canWalk = true;
             closetCooldownTime = closetCooldownCurrent + 2;
+            KastManager.Instance.InKast = false;
         }
     }
 }
