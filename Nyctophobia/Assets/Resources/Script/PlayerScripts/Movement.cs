@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     private float minMoveSpeed;
     [SerializeField] private float staminaCount;
     private float maxStamina;
-    private bool rechargeStage = false;
+    [SerializeField] private bool rechargeStage = false;
     private bool canRun = true;
     [SerializeField] private float staminaDrain;
 
@@ -19,10 +19,12 @@ public class Movement : MonoBehaviour
 
     private Slider staminaBar;
 
+    private float idleBonus;
+    [SerializeField] private GameObject exhaustedUI;
+
     private void Start()
     {
         staminaBar = GameObject.Find("Stamina Bar").GetComponent<Slider>();
-        
 
         maxStamina = staminaCount;
         minMoveSpeed = currentMoveSpeed;
@@ -37,7 +39,7 @@ public class Movement : MonoBehaviour
         staminaCount = Mathf.Clamp(staminaCount, 0, maxStamina);
 
         //run function
-        if (staminaCount > 0 && Input.GetKey(KeyCode.LeftShift) && !rechargeStage && canRun)
+        if (staminaCount > 0 && Input.GetKey(KeyCode.LeftShift) && !rechargeStage && canRun && !MoveAnimations.Instance.charAnim.GetBool("Idle"))
         {
             staminaCount -= staminaDrain * Time.deltaTime;
             StaminaUI();
@@ -49,18 +51,28 @@ public class Movement : MonoBehaviour
             if(staminaCount <= 0)
             {
                 rechargeStage = true;
+                MoveAnimations.Instance.charAnim.Play("walking");
+                exhaustedUI.SetActive(true);
             }
-            staminaCount += staminaDrain/3 * Time.deltaTime;
+            staminaCount += staminaDrain / 3 * (idleBonus += Time.deltaTime);
             StaminaUI();
             currentMoveSpeed = minMoveSpeed;
         }
         if(staminaCount == maxStamina)
         {
             rechargeStage = false;
+            exhaustedUI.SetActive(false);
         }
 
-
-        
+        // Makes it so that when you stand still you get stamina back faster, unless you are exhausted - Finn
+        if (MoveAnimations.Instance.charAnim.GetBool("Idle") && !rechargeStage)
+        {
+            idleBonus = 0.05f;
+        }
+        else if (!MoveAnimations.Instance.charAnim.GetBool("Idle") || rechargeStage)
+        {
+            idleBonus = 0;
+        }
     }
 
     private void OnCollisionStay(Collision col)
@@ -93,6 +105,26 @@ public class Movement : MonoBehaviour
             {
                 transform.rotation = Quaternion.LookRotation(movement);
             }
+        }
+
+
+        // Checks for input and certain parameters to then enable the right animation to be played during movement - Finn
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D))
+        {
+            MoveAnimations.Instance.charAnim.Play("idle");
+            MoveAnimations.Instance.charAnim.SetBool("Idle", true);
+        }
+        else if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
+                  Input.GetKey(KeyCode.D)) && !Input.GetKey(KeyCode.LeftShift))
+        {
+            MoveAnimations.Instance.charAnim.Play("walking");
+            MoveAnimations.Instance.charAnim.SetBool("Idle", false);
+        }
+        else if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+                  && Input.GetKey(KeyCode.LeftShift) && !rechargeStage)
+        {
+            MoveAnimations.Instance.charAnim.Play("running");
+            MoveAnimations.Instance.charAnim.SetBool("Idle", false);
         }
     }
 
