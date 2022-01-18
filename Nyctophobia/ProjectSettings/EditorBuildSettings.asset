@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UI/UnityCredits.unity
     guid: 10d51a05d20d9514bab632d2a1767cee
-  - enabled: 1
-    path: Assets/UI/UnityControls.unity
-    guid: ea7479e93e3fede479a3d2a390e7bd6c
   m_configObjects: {}

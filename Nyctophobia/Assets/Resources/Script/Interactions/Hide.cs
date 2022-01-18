@@ -15,6 +15,7 @@ public class Hide : MonoBehaviour, Iinteract
     public bool closetCooldownCheck;
     private float closetCooldownTime;
     private float closetCooldownCurrent;
+    private bool lockPlayer;
 
     private void Start()
     {
@@ -27,8 +28,8 @@ public class Hide : MonoBehaviour, Iinteract
     }
 
     private void Update()
-    // Constantly updates a variable which is used to make cooldown on hiding possible
     {
+        // Constantly updates a variable which is used to make cooldown on hiding possible
         closetCooldownCurrent += Time.fixedDeltaTime;
 
         if (closetCooldownCurrent <= closetCooldownTime)
@@ -38,6 +39,11 @@ public class Hide : MonoBehaviour, Iinteract
         if (closetCooldownCurrent >= closetCooldownTime)
         {
             closetCooldownCheck = false;
+        }
+
+        if (lockPlayer)
+        {
+            GameObject.FindGameObjectWithTag("Player").transform.position = hidePosition.transform.position;
         }
     }
 
@@ -51,9 +57,10 @@ public class Hide : MonoBehaviour, Iinteract
             closetSound.Play();
             Player.GetComponent<CapsuleCollider>().enabled = false;
             Player.GetComponent<Rigidbody>().useGravity = false;
-            GameObject.FindGameObjectWithTag("Player").transform.position = hidePosition.transform.position;
             insideCloset = true;
             mov.canWalk = false;
+            lockPlayer = true;
+            CharacterAudio.Instance.MoveOrigin.Stop();
             closetCooldownTime = closetCooldownCurrent + 2;
             KastManager.Instance.InKast = true;
         }
@@ -69,6 +76,7 @@ public class Hide : MonoBehaviour, Iinteract
             Player.GetComponent<Rigidbody>().useGravity = true;
             insideCloset = false;
             mov.canWalk = true;
+            lockPlayer = false;
             closetCooldownTime = closetCooldownCurrent + 2;
             KastManager.Instance.InKast = false;
         }

@@ -71,7 +71,7 @@ public class EnemyControl : MonoBehaviour
                     Check2();
                 }
 
-                if (Vector3.Distance(transform.position, CurrentDes) < 2)
+                if (Vector3.Distance(transform.position, CurrentDes) < 3)
                 {
                     m_CloseToPlayer = true;
                     Vector3 lookAt = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);

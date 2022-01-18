@@ -8,6 +8,8 @@ public class KeyManager : MonoBehaviour, Iinteract
     public static KeyManager Instance;
     public TMP_Text Objective;
     public TMP_Text KeyProgression;
+    public AudioSource doorSound;
+    [SerializeField] private AudioClip currentDoorSound;
 
     public bool[] Keys;
     public bool DoorOpen;
@@ -31,6 +33,7 @@ public class KeyManager : MonoBehaviour, Iinteract
         }
 
         KeyProgression.text = "Keys " + KeyCounter + " out of 3";
+        doorSound.clip = currentDoorSound;
     }
 
     public void Interact()
@@ -41,6 +44,7 @@ public class KeyManager : MonoBehaviour, Iinteract
         }
         else if (DoorOpen)
         {
+            doorSound.Play();
             gameObject.GetComponent<Animator>().SetBool("Keys Collected", true);
         }
     }
