@@ -19,6 +19,7 @@ public class WinCon : MonoBehaviour
 
     void Update()
     {
+        // Checks if all win conditions are met
         if (man.DoorOpen && man.GoNext)
         {
             SceneManager.LoadScene(winScene);

@@ -18,6 +18,8 @@ public class CharacterAudio : MonoBehaviour
 
     void Update()
     {
+        // Makes sure the right audio plays when
+        // the player is walking or running
         MoveOrigin.clip = CurrentMoveSounds;
         if (Moving)
         {

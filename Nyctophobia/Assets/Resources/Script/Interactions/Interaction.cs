@@ -9,6 +9,7 @@ public class Interaction : MonoBehaviour
 
     void Update()
     {
+        // Interacts with objects that are interactible and in range of the overlapsphere
         Collider[] objects = Physics.OverlapSphere(transform.position, 0.75f, InterActable);
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -22,6 +23,7 @@ public class Interaction : MonoBehaviour
                 }
             }
         }
+        // If there are any interactibles in range this will show the indicator in-game
         if (objects.Length > 0)
         {
             interactE.SetActive(true);
