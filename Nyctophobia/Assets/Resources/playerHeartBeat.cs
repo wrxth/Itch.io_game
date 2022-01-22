@@ -13,7 +13,7 @@ public class playerHeartBeat : MonoBehaviour
     void Update()
     {
         HeartOrigin.clip = CurrentHeartSounds;
-       if (Vector3.Distance(transform.position, Enemy.transform.position) < 13)
+        if (Vector3.Distance(transform.position, Enemy.transform.position) < 13)
         {
             CurrentHeartSounds = HeartSounds[0];
 

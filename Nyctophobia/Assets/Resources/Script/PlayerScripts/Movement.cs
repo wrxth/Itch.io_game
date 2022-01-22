@@ -113,18 +113,24 @@ public class Movement : MonoBehaviour
         {
             MoveAnimations.Instance.charAnim.Play("idle");
             MoveAnimations.Instance.charAnim.SetBool("Idle", true);
+            CharacterAudio.Instance.Moving = false;
+            CharacterAudio.Instance.Running = false;
         }
-        else if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
-                  Input.GetKey(KeyCode.D)) && !Input.GetKey(KeyCode.LeftShift))
+        else if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+                  && !Input.GetKey(KeyCode.LeftShift) && canWalk)
         {
             MoveAnimations.Instance.charAnim.Play("walking");
             MoveAnimations.Instance.charAnim.SetBool("Idle", false);
+            CharacterAudio.Instance.Moving = true;
+            CharacterAudio.Instance.Running = false;
         }
         else if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-                  && Input.GetKey(KeyCode.LeftShift) && !rechargeStage)
+                  && Input.GetKey(KeyCode.LeftShift) && !rechargeStage && canWalk)
         {
             MoveAnimations.Instance.charAnim.Play("running");
             MoveAnimations.Instance.charAnim.SetBool("Idle", false);
+            CharacterAudio.Instance.Moving = false;
+            CharacterAudio.Instance.Running = true;
         }
     }
 
